@@ -60,7 +60,9 @@ if(sites>=2){
 MB <- list(y=y2, w=rep(1, length(y2)), X=BM2, C=matrix(1,1,N), p=rep(1/N, N), off=array(0,0), S=list(), sp=array(0,0), Ain=diag(N), bin=rep(0,N) )
 MY <- list(y=y4, w=rep(1, length(y4)), X=YM2, C=matrix(1,1,N), p=rep(1/N, N), off=array(0,0), S=list(), sp=array(0,0), Ain=diag(N), bin=rep(0,N) )
 M2 <- list(y=c(y4,y2), w=rep(1, 2*length(y4)), X=rbind(YM2,BM2), C=matrix(1,1,N), p=rep(1/N, N), off=array(0,0), S=list(), sp=array(0,0), Ain=diag(N), bin=rep(0,N) )
-est2 <- pcls(M2)
+
+est2 <- tryCatch({pcls(M2)},error=function(err) { return(rep(NA,N)); })
+
 #plot(est2)
 #dev.new(); plot(rbind(YM2,BM2) %*% est2+0.001,c(y4,y2)+0.001,log="xy",xlim=c(1e-3,1e7),ylim=c(1e-3,1e7)); lines(c(1e-4,1e8),c(1e-4,1e8))
 write.table(est2,file="result.txt",row.names=F, col.names=F)
