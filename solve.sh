@@ -17,7 +17,7 @@ CODE=$MGFname
 MODIFfile=peptide.modifications 
 
 N=$(echo $sequence | grep -o "K" | wc -l)
-Nstates=$(($N*$N))
+Nstates=$((2**$N))
 
 MGF=$MGFname.mgf
 
