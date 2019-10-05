@@ -3,7 +3,7 @@ FASIL-MS
 A set of analysis scripts to relatively quantify all possible combinations of heavy-light acetylations in a peptide containing multiple lysines for data acquired by FASIL-MS method.
 
 Author: Peter Májek
-contact: pmajek@cemm.oeaw.ac.at
+contact: pmajek@cemm.at
 
 Here we provide a set of scripts to solve for relative abundance of possible heavy-light acetylation combinations of a peptide. The programs can be executed on a linux platform with installed R (www.r-project.org). The package mgcv has to be installed under R. 
 
